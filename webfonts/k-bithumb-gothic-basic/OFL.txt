@@ -1,0 +1,5 @@
+빗썸고딕 — Copyright (c) Bithumb Co., Ltd.
+라이선스: SIL Open Font License 1.1 (빗썸 브랜드 서체 페이지)
+원 배포처: https://www.bithumbcorp.com/ko/promotion/font.php
+라이선스 원문: https://openfontlicense.org/open-font-license-official-text/
+수정본에는 '빗썸고딕' 이름을 쓸 수 없음. 이 파일은 letsum.app 미리보기 전용 WOFF2이며 원본 글리프를 변경하지 않았습니다.
