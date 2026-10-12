@@ -1,0 +1,7 @@
+Copyright 2015 Gabia. All rights reserved.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+(공유마당 저작물 이용조건 OFL 표시 기준. 원 배포처: https://font.gabia.com/download)
+https://openfontlicense.org/open-font-license-official-text/
+
+LETSUM 미리보기용으로 형식만 WOFF2로 바꾼 파일입니다(글리프 변경 없음). 설치용 원본은 원 배포처에서 받으세요.
