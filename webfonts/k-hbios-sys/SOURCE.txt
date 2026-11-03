@@ -1,0 +1,2 @@
+https://github.com/quiple/hbios-sys
+Official original files, unchanged. See included licenses.
