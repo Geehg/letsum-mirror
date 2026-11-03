@@ -1,0 +1,5 @@
+https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202604210000000000004
+https://www.peartype.kr/
+
+공식 ZIP의 개별 OFL 전문 확인. 같은 제작사의 다른 폰트에 적용되는 유료 확장 조건과 구분. RFN GraceSerif/우아한세리프 유지, 라이선스 동봉.
+Original bytes, no font conversion or subsetting.

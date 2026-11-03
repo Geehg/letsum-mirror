@@ -1,0 +1,4 @@
+https://github.com/kuskhan/jetendard
+
+제작자 정식 릴리스와 폰트용 OFL 근거 확인, 원본 파일 검사. 기존 한글 폰트와 영문/CJK를 결합한 파생판으로 원천 디자인 신규 수와 구분. 배포시 원저작자·RFN·부속 라이선스 유지.
+Original bytes, no font conversion or subsetting.

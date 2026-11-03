@@ -1,0 +1,5 @@
+https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202610130000000000010
+https://github.com/dynamic-potato/kkakdugi-drafting
+
+개별 라이선스 근거와 원본 폰트 파일 확보. 무변환 파일로 등록 준비 가능; 운영 배포·브라우저 점검은 후속 단계.
+Original bytes, no font conversion or subsetting.

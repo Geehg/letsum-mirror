@@ -1,0 +1,4 @@
+https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202610270000000000002
+
+KERIS 자체 공모 OFL 서체. 공식 공개 미리보기 WOFF 확보·검사. 설문을 임의 제출하지 않았으며 설치용 ZIP 수집과 구분함.
+Original bytes, no font conversion or subsetting.

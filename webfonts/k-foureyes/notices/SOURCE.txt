@@ -1,0 +1,7 @@
+https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288256&menuNo=200195
+https://copyright.keris.or.kr/wft/fntDwnldView?fntGrpId=GFT202210270000000000136
+https://gongu.copyright.or.kr/freeFontEvent.html
+https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13288256&menuNo=200023
+
+폰트 내부 OFL 확인. 같은 제작사의 영문 전용 5종과 달리 한글 윤곽이 존재함. 지원 글자 수가 제한돼 전체 한글 지원으로 표시하지 않음.
+Original bytes, no font conversion or subsetting.

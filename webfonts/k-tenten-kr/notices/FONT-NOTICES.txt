@@ -1,0 +1,2 @@
+Copyright 2026 The Tenten Project Authors. Glyph bitmaps from Fusion Pixel Font, Copyright (c) 2022, TakWolf (https://takwolf.com), which includes Ark Pixel Font (c) 2021 TakWolf, Cubic 11, and Galmuri (c) 2019-2025 Lee Minseo.
+This Font Software is licensed under the SIL Open Font License, Version 1.1.

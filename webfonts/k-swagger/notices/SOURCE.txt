@@ -1,0 +1,5 @@
+https://www.swagger.kr/font.html
+https://www.swagger.kr/font_license.html
+
+공식 웹폰트 ZIP과 임베딩·번들·재배포 허용 확인. 원본 변경 금지, 글꼴 자체 판매 금지. 로고·그래픽 형태의 상표 글리프는 비상업 용도로만 사용.
+Original bytes, no font conversion or subsetting.

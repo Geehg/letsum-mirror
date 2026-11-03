@@ -1,0 +1,2 @@
+BrutalMix (c) 2026 BrutalMix Project. Derived from: NanumSquare Neo (c) 2022 NAVER Corp. designed by Sandoll Inc.; Rajdhani (c) 2014 Indian Type Foundry; Spoqa Han Sans Neo (c) 2020 Spoqa; Cairo (c) 2009 The Cairo Project Authors. Noto Sans KR (c) 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source', SIL OFL 1.1. Hanja (1,816), Greek, Cyrillic and Kana from Noto Sans KR.
+This Font Software is licensed under the SIL Open Font License, Version 1.1. Source font NanumSquare Neo is distributed under the NAVER font license. See OFL.txt and licenses/.

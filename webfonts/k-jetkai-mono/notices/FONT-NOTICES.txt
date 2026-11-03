@@ -1,0 +1,6 @@
+JetKai Mono: Copyright 2026 phyyou.
+Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+Copyright 2025-2026 LXGW (https://github.com/lxgw/LxgwWenkaiKR)
+Copyright 2020 The Klee Project Authors (https://github.com/fontworks-fonts/Klee)
+Copyright 2021-2026 LXGW (https://github.com/lxgw/LxgwWenKai), with Reserved Font Name '霞鹜', '霞鶩', '落霞孤鹜', '落霞孤鶩' and 'LXGW'.
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org

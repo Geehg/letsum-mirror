@@ -1,0 +1,18 @@
+[0xProto]
+Copyright (c) 2024, 0xType Project Authors https://github.com/0xType
+
+[IBM Plex]
+Copyright © 2017 IBM Corp. https://github.com/IBM/plex
+
+[Hack]
+Copyright 2018 Source Foundry Authors https://github.com/source-foundry/Hack
+
+[Nerd Fonts]
+Copyright (c) 2014, Ryan L McIntyre https://ryanlmcintyre.com
+
+[Explex]
+Copyright 2024 Yuko Otawara
+
+This Font Software is licensed under the SIL Open Font License,
+Version 1.1. This license is available with a FAQ
+at: http://scripts.sil.org/OFL
