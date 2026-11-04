@@ -1,0 +1,4 @@
+https://github.com/thkmon/BBMonoFont
+IBM Plex 기반 코딩용
+폰트 OFL, 빌드 코드 MIT를 구분. 원천 라이선스 동봉.
+Original files preserved without conversion or subsetting. Root code MIT licenses do not replace font OFL licenses.

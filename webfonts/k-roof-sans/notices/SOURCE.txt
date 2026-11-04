@@ -1,0 +1,4 @@
+https://github.com/live-anywhere/roof-sans
+Wanted Sans·Pretendard JP·Source Han 기반
+원천 저작권·OFL 고지 유지. 원본 16.2MB로 첫 로딩 성능 검토 필요.
+Original files preserved without conversion or subsetting. Root code MIT licenses do not replace font OFL licenses.

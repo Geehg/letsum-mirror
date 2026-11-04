@@ -1,0 +1,6 @@
+Newsreader (c) 2020 The Newsreader Project Authors (http://github.com/productiontype/Newsreader)
+Readerly (c) 2026 Nico Verbruggen (https://github.com/nicoverbruggen/readerly)
+Libron (c) 2026 Nico Verbruggen (https://github.com/nicoverbruggen/libron)
+RIDIBatang (c) 2019 RIDI & Sandoll. Font designed by Sandoll Inc.
+Jeongdok (c) 2026 sharosoo (https://github.com/sharosoo/fonts)
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org

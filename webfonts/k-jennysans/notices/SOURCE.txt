@@ -1,0 +1,4 @@
+https://github.com/gjh999/jennysans
+Pretendard·Noto Sans KR 기반
+RFN JennySans/제니산스. 원본 무변환·저작권과 OFL 고지 유지.
+Original files preserved without conversion or subsetting. Root code MIT licenses do not replace font OFL licenses.
