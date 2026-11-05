@@ -1,0 +1,375 @@
+# JetBatang NF
+
+코딩 환경이 IDE 에서 터미널로 옮겨 오고 에이전트에게 작업을 맡기게 되면서, 요즘은 터미널에서 코드보다
+텍스트를 읽는 시간이 더 길어졌습니다. 그러다 보니 터미널의 한글이 자꾸 눈에 걸리더라고요.
+
+그래서 리디에서 나온 전자책 전용 폰트인 [리디바탕](https://ridicorp.com/ridibatang/)(RIDIBatang) 과
+[JetBrains Mono](https://www.jetbrains.com/lp/mono/) 를 하나로 합쳐 봤습니다. 만들어 놓고 직접 써 보니 무척
+만족스러워서, 다른 분들도 쓰시면 좋을 것 같아 공유합니다.
+
+써 보시다가 이상한 부분이 있으면 [Issues](../../issues) 로 알려 주세요. 감사합니다.
+
+- 라틴·기호·아이콘은 [JetBrainsMono Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts), 한글·가나는
+  리디바탕에서 가져왔어요.
+- 한글 글자폭은 라틴의 정확히 두 배(1200/600)로 고정해서, 한글을 섞어 써도 터미널 격자가 어긋나지 않아요.
+- 굵기 여덟 단계에 정체와 이탤릭을 더해 모두 열여섯 종이에요.
+
+![preview](docs/preview.png)
+
+![weights](docs/weights.png)
+
+![sizes](docs/sizes.png)
+
+```text
+JetBatang NF 테스트 ABC abc 0123456789
+가각간갇갈감갑값같꿇뷁힣
+한글과 English 가 섞인 주석 한 줄
+if (상태 === "완료") return "성공";
+ㄱㄴㄷㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ
+ひらがな カタカナ コーヒー データ サーバー
+（）［］｛｝，．：；！？ ㈜ ㎡ ￦
+※ 주의 ① ② ③ ★ ☆ Ⅳ 25℃ ₩1,000
+```
+
+## INSTALL
+
+[Releases](../../releases) 에서 기본 네 스타일(Regular·Bold·Italic·BoldItalic)은 `JetBatangNF-basic.zip` 으로 받으세요.
+다른 굵기도 쓰려면 열여섯 종을 담은 `JetBatangNF-all.zip` 이나 원하는 낱개 `ttf` 를 받으면 돼요.
+설치한 뒤 터미널에서 글꼴 이름을 `JetBatang NF` 로 지정하면 돼요. 저장소에는 설치할 글꼴 파일이 없어요.
+설치한 판은 글꼴 정보의 버전(`Version 1.9.1`)이 릴리스 태그와 같은지로 확인하세요. v1.4.0 이하는 버전이 비어 있어요.
+릴리스에 `SHA256SUMS` 가 있으면 받은 파일이 있는 폴더에서 파일이 온전한지 확인할 수 있어요. 파일마다 `OK` 가
+나오면 돼요.
+
+```sh
+sha256sum -c SHA256SUMS --ignore-missing
+```
+
+```powershell
+Get-Content SHA256SUMS | ForEach-Object { $hash, $name = $_ -split '  ', 2; if (Test-Path $name) { "${name}: $(if ((Get-FileHash $name).Hash -eq $hash) { 'OK' } else { 'FAILED' })" } }
+```
+
+**Windows**
+
+Windows Terminal 에서는 받은 `ttf` 를 선택해 우클릭 → **모든 사용자용으로 설치** 를 권장해요.
+관리자 승인이 필요해요. 사용자 전용 글꼴 설치에는
+[Windows 의 알려진 글꼴 처리 문제](https://github.com/microsoft/terminal/issues/19707)가 있어서,
+글꼴 파일을 읽지 못하거나 Terminal 이 종료될 수 있어요. 이미 현재 사용자용으로 설치했다면 기존
+JetBatang NF 를 먼저 제거해 같은 글꼴이 두 위치에 중복 등록되지 않게 하세요.
+
+스크립트도 **모든 사용자용 설치와 기존 설치 업데이트**를 지원해요. 기존 등록이 있으면 그 범위를 그대로 유지하고,
+모든 사용자용이면 관리자 PowerShell 이 필요해요. 권한이 없다고 사용자 전용으로 대신 설치하지 않아요.
+처음 설치할 때 인자가 없으면 현재 사용자용이며, Windows Terminal 에서는 관리자 PowerShell 의 `-AllUsers` 를 권해요.
+두 범위에 중복 등록돼 있거나 같은 스타일이 서로 다른 파일을 가리키면 변경하지 않고 먼저 정리하라고 알려줘요.
+
+`JetBatangNF-basic.zip` 이나 `JetBatangNF-all.zip` 을 풀고 실행하세요. 한두 종만 받았다면 `install-windows.ps1` 도
+같은 폴더에 두세요. 스크립트 옆의 `JetBatangNF-*.ttf` 를 먼저 보고 없으면 `fonts/` 에서 찾아요. 저장소에서 새 빌드를
+설치할 때 루트에 같은 이름의 예전 TTF 가 있으면 다른 폴더로 옮겨 주세요.
+
+```powershell
+# Windows Terminal 권장: 관리자 PowerShell 에서 처음 설치
+powershell -ExecutionPolicy Bypass -File install-windows.ps1 -AllUsers
+# 기존 설치 업데이트: 원래 범위를 자동으로 유지 (전체 사용자용은 관리자 권한 필요)
+powershell -ExecutionPolicy Bypass -File install-windows.ps1
+# 파일·등록을 바꾸지 않고 변경 예정 사항만 확인
+powershell -ExecutionPolicy Bypass -File install-windows.ps1 -WhatIf
+```
+
+사용 중인 파일을 억지로 덮어쓰지 않고, 내용 해시를 붙인 새 파일명으로 기존 등록의 경로를 바꿔요. 이전 파일과
+백업은 복원과 실행 중인 앱을 위해 남기므로 업데이트할수록 디스크 사용량이 늘 수 있어요. 사용자용 백업은
+`%LOCALAPPDATA%\JetBatangNF\Backups`, 모든 사용자용은 `%ProgramData%\JetBatangNF\Backups` 에 남고 경로를 출력해요.
+변경 중 실패하면 이전 상태로 자동 복구하고, `-Rollback` 으로 특정 백업 상태를 직접 복원할 수도 있어요.
+
+```powershell
+# 제거도 실제 등록된 파일 경로와 설치 범위를 사용
+powershell -ExecutionPolicy Bypass -File install-windows.ps1 -Uninstall
+# 앞서 출력된 백업 폴더를 지정해 복원 (모든 사용자용은 관리자 권한 필요)
+powershell -ExecutionPolicy Bypass -File install-windows.ps1 -Rollback "C:\ProgramData\JetBatangNF\Backups\백업폴더"
+```
+
+제거할 파일이 사용 중이면 등록을 먼저 제거하고 남은 경로를 알려줘요. 앱을 닫은 뒤 그 파일만 지우면 돼요.
+스크립트는 프로그램을 강제로 종료하거나 재부팅을 예약하지 않아요.
+
+설치가 끝나면 터미널을 완전히 종료한 뒤 다시 열어 주세요. WPF 앱에서 글꼴 가족 목록을 읽을 때
+`FileNotFoundException` 이 나면 조회 중 파일을 찾지 못한 것이지, 글꼴 파일이 불량이라는 뜻은
+아니에요. 등록된 글꼴의 경로와 중복 설치 여부를 확인하세요.
+
+파일 복사와 레지스트리 등록만 하는 설치 방식은 쓰지 마세요. 탐색기의 글꼴 설치 기능이나 위
+스크립트로 글꼴을 등록해야 실행 중인 세션에도 설치 사실을 알릴 수 있어요.
+
+**Linux** — `~/.local/share/fonts/` 에 넣고 `fc-cache -fv`
+
+**macOS** — `~/Library/Fonts/` 에 넣기
+
+**WSL** — Windows Terminal 이나 Windows 판 VS Code 로 WSL 을 쓰면 글꼴은 **Windows 쪽**에 설치하세요.
+WSL 의 `~/.local/share/fonts/` 에만 넣어도 Windows 프로그램에는 보이지 않아요. WSL 안에서 실행하는
+Linux GUI 프로그램에 쓸 때만 위 Linux 설치 방법을 따라요.
+
+## WEIGHTS
+
+| 굵기 | `style` | 파일 | 라틴 세로획 | 한글 세로획 |
+| --- | --- | --- | --- | --- |
+| Thin | `Thin` / `Thin Italic` | `JetBatangNF-Thin`, `-ThinItalic` | 50 | 45 |
+| ExtraLight | `ExtraLight` / `ExtraLight Italic` | `JetBatangNF-ExtraLight`, `-ExtraLightItalic` | 66 | 59 |
+| Light | `Light` / `Light Italic` | `JetBatangNF-Light`, `-LightItalic` | 79 | 71 |
+| Regular | `Regular` / `Italic` | `JetBatangNF-Regular`, `-Italic` | 90 | 81 |
+| Medium | `Medium` / `Medium Italic` | `JetBatangNF-Medium`, `-MediumItalic` | 99 | 89 |
+| SemiBold | `SemiBold` / `SemiBold Italic` | `JetBatangNF-SemiBold`, `-SemiBoldItalic` | 108 | 99 |
+| Bold | `Bold` / `Bold Italic` | `JetBatangNF-Bold`, `-BoldItalic` | 125 | 117 |
+| ExtraBold | `ExtraBold` / `ExtraBold Italic` | `JetBatangNF-ExtraBold`, `-ExtraBoldItalic` | 150 | 137 |
+
+표의 세로획 값은 1000 upem 기준으로 `한` 의 세로획을 잰 거예요.
+
+앱이 가족과 굵기를 따로 고르게 하면 가족 이름은 모든 굵기에서 `JetBatang NF` 예요.
+위 표의 굵기와 이탤릭 여부를 앱 설정에서 골라요. Windows 의 GDI 방식처럼 가족 하나에
+Regular·Italic·Bold·Bold Italic 네 칸만 있는 앱에서는 아래 가족 이름을 써요.
+
+| 쓰려는 굵기 | GDI 방식 앱의 가족 이름 | 앱에서 고를 스타일 |
+| --- | --- | --- |
+| Thin | `JetBatang NF Thin` | Regular / Italic |
+| ExtraLight | `JetBatang NF ExtraLight` | Regular / Italic |
+| Light | `JetBatang NF Light` | Regular / Italic |
+| Regular | `JetBatang NF` | Regular / Italic |
+| Medium | `JetBatang NF Medium` | Regular / Italic |
+| SemiBold | `JetBatang NF SemiBold` | Regular / Italic |
+| Bold | `JetBatang NF` | Bold / Bold Italic |
+| ExtraBold | `JetBatang NF ExtraBold` | Regular / Italic |
+
+예를 들어 Medium 이 목록에서 따로 뜨는 앱에는 `JetBatang NF Medium` 을 넣어요.
+굵기를 따로 고르는 앱에서는 `JetBatang NF` 와 Medium 을 고르면 돼요.
+
+RIDIBatang 은 세로획 81 짜리 한 굵기밖에 없어요. 그래서 한글 세로획이 같은 굵기 라틴의 0.9 배쯤
+(Regular 의 81 : 90) 되도록 굵기마다 한글 획을 불리거나 깎아요. Medium 부터는 한글 외곽선을 여덟
+방향으로 겹쳐 획을 불린 다음, 겹친 외곽선을 하나로 합쳐요. 옮기는 거리보다 작은 `〃` 의 뾰족한 끝 같은
+곳은 여덟 방향 복사본이 다 덮지 못해서, 그런 글자는 원래 자리에도 겹쳐요. Light 부터 가는 쪽은 원래
+자리와 여덟 방향으로 옮긴 외곽선이 모두 겹치는 곳만 남겨 획을 깎아요. 양은 가로 방향을 기준으로 잡고,
+세로 방향은 불릴 때 0.4 배, 깎을 때 0.8 배를 줘요. RIDIBatang 은 가로획(67)과 세로획(81)의 차이가
+작아서, 가로획을 덜 깎으면 Thin 에서 가로획이 세로획보다 굵어져요. 깎다가 가는 획이 끊기거나 사라지는
+`㎡ 『 ぁ` 같은 글자는 끊기지 않는 데까지 1/16 씩 덜 깎아요. 다만 `『` 처럼 원래 획이 가는 글자는 획이 실처럼
+남지 않게, 세로획을 다 깎았을 때보다 눈에 띄게 옅어지기 전에 멈춰요.
+
+## COVERAGE
+
+베이스 글꼴은 `JetBrainsMonoNerdFontMono` 하나만 써요. RIDIBatang 에서 가져오는 건
+터미널이 2칸으로 세는 구간, `₩`, 베이스에 없는 KS X 1001 기호예요. NFD 에 필요한 현대 한글
+자모와 가나의 결합점도 기존 RIDIBatang 외곽선을 재사용해 만들어요. 나머지는 베이스를 그대로 둬요.
+
+| 구간 | 내용 |
+| --- | --- |
+| `U+AC00`–`U+D7A3` | 한글 완성형 |
+| `U+3130`–`U+318F` | 한글 호환 자모 |
+| `U+1100`–`U+1112`, `U+1161`–`U+1175`, `U+11A8`–`U+11C2` | 현대 한글 첫가끝 자모 67자 |
+| `U+3041`–`U+309F` | 히라가나 |
+| `U+3099`–`U+309A` | 가나 결합 탁점·반탁점, 글자폭 0 |
+| `U+30A0`–`U+30FF` | 가타카나 |
+| `U+3000`–`U+303F` | CJK 문장부호 `。、「」〜` |
+| `U+3200`–`U+32FF` | 괄호문자·원문자 `㈜ ㉠` |
+| `U+3300`–`U+33FF` | CJK 호환 문자 `㎡ ㎏ ㎞` |
+| `U+FF01`–`U+FF60` | 전각 영숫자·기호 |
+| `U+FFE0`–`U+FFE6` | 전각 통화기호 `￦` |
+
+RIDIBatang 에는 장음부호 `ー`(`U+30FC`) 가 없어요. 그대로 두면 `コーヒー` 가 `コ□ヒ□` 로
+깨지기 때문에, 모양이 같은 `―`(`U+2015`) 를 대신 써요. 또 `￦`(`U+FFE6`) 에는 전각 역슬래시 모양이
+걸려 있어서 `₩`(`U+20A9`) 모양을 대신 써요. 둘 다 `jetbatang/charset.py` 의 `ALIASES` 에 있어요.
+
+`₩ ℃ ℉` 와 로마 숫자 `Ⅰ`–`Ⅹ` `ⅰ`–`ⅹ` 는 터미널이 1칸으로 세는데 베이스에 없어요. RIDIBatang 것을
+베이스 대문자 높이로 키워 `W` 자리 가운데에 넣고, `W` 보다 넓은 `₩ ℃ Ⅷ` 같은 글자는 가로만 줄여요.
+한글처럼 올려 앉히지 않고 기준선에 맞춰서 `25℃` `Ⅳ.` 가 숫자·마침표와 나란해요. `jetbatang/charset.py` 의 `NARROW` 에 있어요.
+굵기를 바꿀 때는 가로로 줄인 비율만큼 덜 불리거나 덜 깎아요. 원래 폭에서 굵기를 바꾼 다음 가로로
+줄인 것과 같은 모양이라, ExtraBold 에서도 `Ⅷ` 의 획 다섯이 붙지 않아요. 그 대신 줄인 글자의 세로획은
+같은 굵기의 라틴보다 조금 가늘어요. 가는 판에서는 깎기 전 잉크를 `W` 자리에 맞춰서, 깎은 만큼 조금 좁아요.
+
+한국어 문서에 자주 나오는 `※ ① ★ ⑴ ⓐ ⅓ ‥` 같은 KS X 1001 기호는 폭이 애매해서, 터미널이 기본값으로
+1칸에 세요. 베이스에 없는 것은 RIDIBatang 에서 가져와 1칸 가운데에 베이스 `○` 크기로 줄여 넣어요.
+세로 가운데가 한글과 같아서 `①` 과 `㉠` 이 한 줄에 나란하고, 이탤릭에서도 베이스 `○ ●` 처럼 세워 둬요.
+터미널에서 애매한 폭을 2칸으로 세게 바꿨다면 왼쪽 칸에 그려져요. `jetbatang/charset.py` 의 `ksx1001_symbols` 가
+골라요. 옴 기호(`U+2126`)·옹스트롬 기호(`U+212B`)·`―`(`U+2015`) 는 베이스의 `Ω` `Å` `—` 를 그대로
+써요. 같은 파일의 `BASE_ALIASES` 에 있어요.
+굵은 판에서는 줄인 비율만큼 덜 불려요. 그래도 `⑫` 의 숫자가 원에 붙거나 `⑧` 의 속공간이 막히면
+더 덜 불려서, 획 사이가 1 단위보다 좁아지지 않고 속공간도 Regular 와 하나하나 같아요. `⑬ ⒀` 은
+ExtraBold 에서 조금만 불려도 숫자가 원에 붙어서 Regular 굵기 그대로예요. 가는 판에서는 깎지 않아요.
+줄여 넣어 획이 이미 Light 라틴보다 가늘어서, 한글만큼 깎으면 Thin 에서 `①` 의 원이 거의 사라져요.
+
+탁음 가나 `ゔ ヷ ヸ ヹ ヺ` 도 RIDIBatang 에 없어요. `ヴ` 에서 탁점 두 획을 떼어 `う ワ ヰ ヱ ヲ` 에
+얹어 만들어요. 탁점 자리를 내려고 청음 글자를 `ヴ` 가 `ウ` 를 옮긴 만큼 옮겨요. `jetbatang/kana.py` 의 `VOICED` 에 있어요.
+작은 히라가나 `ゕ ゖ` 와 띄어 쓰는 탁점·반탁점 `゛ ゜` 도 없어서 만들어요. `ゕ ゖ` 는 `か け` 를 원본
+`ヵ ヶ` 가 `カ ケ` 보다 작은 만큼(0.81 배) 줄여 내리고, `゛ ゜` 는 결합 탁점·반탁점과 같은 모양을
+칸 왼쪽 위에 그려요. 앞 글자 오른쪽 위에 붙어 보이게 하는 일본어 글꼴의 관례예요. 같은 파일의 `SMALL` 과
+`SPACING_MARKS` 에 있어요.
+
+macOS 파일 이름처럼 NFD 로 분리된 `한글` 과 `が` `ぱ` 도 지원해요. 자모와 결합점에
+글리프가 있어 앱이 글자별로 글꼴을 고를 때 다른 글꼴로 넘어가지 않고, OpenType `ccmp` 로 기존
+완성형 `한글` `が` `ぱ` 글리프에 조합해 같은 모양과 두 칸 폭으로 그려요. 현대 한글 11,172음절의
+NFD 를 지원하고, 호환 자모 `ㄱㅏ` 는 조합하지 않아요. 원본의 라틴 리거처·조합 기능은 유지해요.
+
+베이스의 `⚡`(`U+26A1`) `﹢`(`U+FE62`) 는 터미널이 2칸으로 세는데 1칸 폭으로 그려져 있어요.
+그래서 2칸 가운데로 옮겨요. `☰`(`U+2630`) 는 Unicode 16 부터 2칸이지만, 아직 1칸으로 세는
+터미널에서 옆 글자를 덮지 않게 그대로 둬요. `jetbatang/charset.py` 의 `WIDEN` 에 있어요.
+
+테스트 러너와 할 일 목록에 자주 나오는 `✔ ✘ ☐ ☑ ☒` 는 Nerd Fonts 어느 판에도 없어서, 같은 판 베이스의
+`✓ ✗ □` 로 만들어요. `✔ ✘` 는 `✓ ✗` 의 획을 그 굵기만큼 더 불린 다음 `✓ ✗` 자리로 줄여서, 한 열에 섞여도
+나란해요. `☐` 는 `□` 를 그대로 쓰고, `☑ ☒` 는 그 `□` 안에 `✓ ✗` 를 상자 벽 두께만큼 띄워 줄여 넣어요.
+베이스 `□` 는 굵기와 관계없이 같은 상자라 `☐ ☑ ☒` 의 상자도 모든 굵기에서 같아요. 이탤릭에서도 베이스
+`✓ ✗ □` 처럼 세워 둬요. `jetbatang/checkmarks.py` 에 있어요.
+
+## LIMITATIONS
+
+- 13px 아래에서는 굵은 쪽 한글의 속공간이 메워져요. `뷁` 같은 글자부터 뭉개지기 시작해요.
+- Thin·ThinItalic·ExtraLight 에서 `퐪` `퐬` `㎯` 처럼 획이 아주 가늘게 이어진 글자 열세 자는 조금만 깎아도
+  획이 끊기거나 속공간이 터져서 Regular 굵기 그대로예요. ExtraLightItalic 은 `㎯` 한 자이고, Light·LightItalic 은 없어요.
+- 한자가 없어요. 원본인 RIDIBatang 에 한자 글리프가 없어서예요.
+- 가나 중 `ゝ ゞ ヽ ヾ ゟ ゠ ヿ` 일곱 자가 빠져 있어요. RIDIBatang 에 만들 재료가 되는 글자가 없어요.
+- 옛한글 자모는 지원하지 않아요. NFD 조합에는 OpenType 조합을 처리하는 렌더러가 필요해요.
+  글자를 하나씩 따로 그리는 앱에서는 글꼴만으로 자모를 완성형으로 묶을 수 없어요.
+- KS X 1001 의 라틴 글자 `Ĳ ĳ ⁿ ː` 는 넣지 않았어요. 명조로 그리면 베이스 라틴 옆에서 튀어서,
+  터미널이 다른 글꼴로 그려요.
+- 라틴·숫자·괘선은 JetBrains Mono 의 힌팅을 그대로 쓰지만, 한글·가나와 RIDIBatang 에서 가져온 기호,
+  Nerd Font 아이콘에는 힌팅이 없어요. 그래서 힌팅을 쓰는 환경(Windows 등)에서 작은 크기로 보면
+  한글이 라틴보다 흐릿하고, 명조 특유의 획 대비가 뭉개져요.
+
+## BUILD
+
+`fontTools` 와 `skia-pathops` 가 필요해요. 두 라이브러리의 버전이 다르면 같은 코드로도 글꼴이 달라질 수
+있어서 `requirements.txt` 에 버전을 고정해 뒀어요. 가상환경에 설치하세요. 깔린 판이 `requirements.txt` 와
+다르면 `build.sh` 가 빌드하기 전에 경고하고, `package.sh` 는 그렇게 빌드한 `fonts/` 를 묶을 때 다시 경고해요.
+쓰던 환경으로 빌드하는 것을 막지는 않아요.
+
+```sh
+python3 -m venv .venv && . .venv/bin/activate
+pip install -r requirements.txt
+VERSION=1.9.1 ./build.sh
+```
+
+`uv` 가 있으면 가상환경을 만들지 않고 `VERSION=1.9.1 uv run --no-project --with-requirements requirements.txt ./build.sh`
+로 돌려도 돼요. 이때는 회귀 검사도 `uv run --no-project --with-requirements requirements.txt python3 -m unittest discover tests`
+로 돌려요.
+
+`requirements.txt` 의 `uharfbuzz` 는 회귀 검사에서 NFD 문자열을 실제로 조합할 때 써요. 빌드할 때도 설치돼
+있으면 fontTools 가 GSUB 를 harfbuzz 로 배치해서, 없을 때와 동작은 같지만 파일 바이트가 달라져요. 릴리스는
+`requirements.txt` 를 모두 설치한 환경에서 빌드하세요.
+
+같은 코드·원본·빌드값·기준 시각과 같은 라이브러리·Python·zlib 환경이면 TTF 와 ZIP 도 같은 바이트로 나와요.
+빌드 시각은 현재 시각이 아니라 Git 커밋 시각으로 고정해요. `SOURCE_DATE_EPOCH` 에 유닉스 시각(0 이상의 정수)을 직접 지정할 수도 있어요.
+`.git` 이 없는 소스 묶음은 기본값으로 UTC 1980-01-01 을 써요. 이 값은 글자 모양이나 버전 번호를 바꾸지 않아요.
+ZIP 은 빌드 기록에 남긴 시각을 쓰고, 파일의 수정 시각·권한·나열 순서·시간대는 바이트에 영향을 주지 않게 해요.
+ZIP 이 표현할 수 없는 시각은 UTC 1980~2107 년 범위에 맞추고, 초는 ZIP 규칙에 따라 2초 단위로 저장해요.
+
+RIDIBatang 은 [리디바탕 페이지](https://ridicorp.com/ridibatang/)의 '리디바탕 다운로드'
+(`https://ridicorp.com/wp-content/themes/ridicorp/css/font/RIDIBatang.otf`)로 받은 파일을 고치지 않고
+`sources/RIDIBatang.otf` 에 넣어 뒀어요. 빌드할 때 내려받지 않아서 사이트 주소가 바뀌어도 빌드할 수 있어요.
+
+새 판이 나왔는지는 다시 받은 파일과 해시를 견줘 보면 알 수 있어요. 다르면 받은 파일을 같은 이름으로 바꿔 넣고,
+받은 주소와 글꼴 정보의 버전을 커밋 메시지에 적어 커밋하세요.
+
+```sh
+curl -fsSL https://ridicorp.com/wp-content/themes/ridicorp/css/font/RIDIBatang.otf | sha256sum   # 다시 받은 파일
+sha256sum sources/RIDIBatang.otf                                                                 # 넣어 둔 파일
+python3 -c 'from fontTools.ttLib import TTFont; print(TTFont("sources/RIDIBatang.otf")["name"].getDebugName(5))'   # 버전
+```
+
+글꼴 정보의 저작권 줄이 바뀌었으면 `LICENSE` 의 RIDIBatang 줄도 같이 고쳐요. 파일이 바뀌면 빌드 기록의 해시도
+바뀌어서, 예전 파일로 만든 `fonts/` 로는 회귀 검사가 실패하고 `package.sh` 가 멈춰요. `./build.sh` 로 다시 빌드해
+회귀 검사를 돌리고, 어떤 글자가 달라졌는지 확인하세요. 웹 페이지나 TrueType 판처럼 CFF 외곽선 OpenType 이 아닌
+파일을 넣으면 `build.sh` 가 베이스 글꼴을 받기 전에 멈춰요. 예전 `build.sh` 가 받아 둔 `build/RIDIBatang.otf` 는
+더 쓰지 않으니 지워도 돼요.
+
+베이스 글꼴은 스크립트가 `build/` 에 내려받고 SHA-256 으로 확인해요. 받다가 실패하거나 해시가 고정한 값과
+다르면 빌드하지 않고 멈춰요. 받은 zip 이 바뀌어서 멈췄다면 바뀐 내용을 확인한 뒤 `build.sh` 의 `NERD_PINNED_SHA256` 을
+고치세요. 고치면 풀어 둔 베이스 글꼴도 새 zip 에서 다시 풀어요. Nerd Fonts 새 판으로 올려 릴리스하려면 `build.sh` 의
+`NERD_VERSION` 기본값과 `NERD_PINNED`, `NERD_PINNED_SHA256` 을 함께 고쳐요. 해시는 그 릴리스의 `SHA-256.txt` 에 있어요.
+새 zip 의 `README.md` 에 있는 아이콘 묶음 표(`unzip -p build/JetBrainsMono-<판>.zip README.md`)가 바뀌었으면
+`LICENSE` 의 아이콘 목록도 맞춰 고쳐요.
+`NERD_VERSION`·`NERD_FAMILY` 로 다른 Nerd Fonts 판을 고르면 그 릴리스의 `SHA-256.txt` 로 확인하고, 판을 바꾸면
+베이스 글꼴도 새로 받아요. 예전 `build.sh` 로 받아 둔 `build/` 에서는 처음 한 번 Nerd Font 를 다시 받거나 다시 풀어요.
+
+`VERSION` 은 글꼴 정보에 찍히는 버전이라 꼭 넘겨야 해요. 릴리스 태그(`v1.9.1`)와 같은 값을 쓰세요.
+빠졌거나 `X.Y.Z` 꼴이 아니면 베이스 글꼴을 내려받기 전에 멈춰요. 기본값에 기대어 이전 버전으로 빌드하는
+일을 막으려고 매번 릴리스 버전을 직접 지정하게 했어요. 이전 값을 다시 넘기는 것까지 막지는 못해요.
+글꼴 내부 버전값의 표현 범위 때문에 `Y`·`Z` 는 0~99, 버전의 상한은 `327.67.99` 예요.
+
+결과는 `fonts/JetBatangNF-*.ttf` 열여섯 개예요. 빌드한 다음 아래 명령으로 회귀 검사를 돌려요.
+굵기 검사는 기본값으로 빌드했다고 보고 재요. `EMBOLDEN_SCALE` 같은 빌드 값을 바꾸면 실패할 수 있어요.
+
+```sh
+python3 -m unittest discover tests
+```
+
+일부 굵기만 고르면 릴리스용 `fonts/` 를 건드리지 않고 기본적으로 `build/preview-fonts/` 에 만들어요.
+`OUT_DIR` 로 출력 폴더를, `JETBATANG_FONTS` 로 검사할 폴더를 지정할 수 있어요. 없는 굵기의 검사는 건너뛰어요.
+
+```sh
+VERSION=1.9.1 ./build.sh Thin ThinItalic
+JETBATANG_FONTS=build/preview-fonts python3 -m unittest discover tests
+
+VERSION=1.9.1 OUT_DIR="build/preview fonts" ./build.sh Regular
+JETBATANG_FONTS="build/preview fonts" python3 -m unittest discover tests
+```
+
+부분 빌드는 완성된 열여섯 종의 빌드 기록을 만들지 않아서 릴리스로 묶을 수 없어요. 열여섯 종을 모두 다른 폴더에
+만들었다면 `OUT_DIR="그 폴더" ./package.sh` 로 묶을 수 있어요.
+
+빌드 값을 바꿀 때도 `VERSION` 은 같이 넘겨요. `SCALE`·`YSHIFT`·`EMBOLDEN_SCALE` 이 숫자가 아니거나 `JOBS` 가
+0 이상의 정수가 아니면 베이스 글꼴을 내려받기 전에 멈춰요. 굵기 목록과 굵기마다의 한글 굵기 증가량은
+`jetbatang/release.py` 의 `VARIANTS` 에 있어요. 릴리스는 기본값으로 만들어요. 아래처럼 기본값과 다른 값으로
+빌드하면 그 값이 빌드 기록에 남고, `package.sh` 가 묶을 때 경고해요.
+
+```sh
+VERSION=1.9.1 SCALE=1.05 YSHIFT=0 ./build.sh     # 한글을 5% 키우고 원래 높이로
+VERSION=1.9.1 EMBOLDEN_SCALE=1.25 ./build.sh     # 한글 굵기 증가량(가는 판은 깎는 양)을 25% 더
+VERSION=1.9.1 JOBS=4 ./build.sh                  # 동시에 만드는 굵기 수 줄이기(기본은 CPU 수)
+VERSION=1.9.1 FAMILY="MyBatang NF" ./build.sh    # 글꼴 이름 바꾸기
+
+# 바탕 Nerd Font (기본값)
+VERSION=1.9.1 NERD_FAMILY=JetBrainsMono BASE_PREFIX=JetBrainsMonoNerdFontMono ./build.sh
+```
+
+한 종씩 세밀하게 조절하려면 `python3 build.py --help` 를 보세요. `build.py` 는 명령줄 입구이고, 글꼴을 합치는
+코드는 영역별로 `jetbatang/` 에 나눠 두었어요. 어느 모듈이 무엇을 하는지는 `jetbatang/__init__.py` 에 적혀 있어요.
+
+글꼴 고유 ID(`nameID 3`)에는 판·제조사 ID·PostScript 이름을 함께 적어 같은 스타일의 서로 다른 판을 구별해요.
+제조사 ID(`OS/2.achVendID`)는 원본 JetBrains의 `JB`를 물려받지 않고, 등록한 제조사 ID가 없다는 뜻의 `NONE`으로 적어요.
+
+열여섯 종이 모두 만들어지면 `build.sh` 가 어느 코드(`build.py`·`build.sh`·`requirements.txt`·`jetbatang/*.py`)와
+RIDIBatang 원본(`sources/RIDIBatang.otf`), 어느 판의 라이브러리, 어느 기준 시각(`source_date_epoch`)으로 만든 어느
+파일인지 `fonts/build-info.json` 에 적어요.
+`OUT_DIR` 를 지정했다면 그 폴더에 남겨요. 코드와 원본은 빌드를 시작할 때 잡아 두고,
+빌드하는 동안 바뀌었으면 기록하지 않아요. 회귀 검사는 이 기록으로 `fonts/` 가 지금 코드와 원본으로 끝까지 만든
+것인지 확인해요. 기록이 없으면(예전 `build.sh` 로 만들었거나 빌드가 중간에 멈췄으면) 이 검사가 실패하니,
+`./build.sh` 를 한 번 다시 돌리세요.
+
+Releases 에 올릴 파일은 `./package.sh` 로 `dist/` 에 만들고, `dist/` 의 파일을 모두 올리면 돼요.
+`JetBatangNF-all.zip` 에는 글꼴 열여섯 종과 `install-windows.ps1`, `LICENSE` 가 함께 들어가고,
+`JetBatangNF-basic.zip` 은 같은 설치 파일·라이선스와 기본 네 스타일만 담아요. 낱개 `ttf`, `install-windows.ps1`,
+두 ZIP 을 포함해 파일마다 해시를 적은 `SHA256SUMS` 도 따로 나와요.
+`package.sh` 는 `fonts/` 가 `fonts/build-info.json` 과 맞지 않으면 멈춰요. 코드나 `sources/RIDIBatang.otf` 를 바꾼 뒤
+다시 빌드하지 않았거나, 빌드가 중간에 실패했거나, 빌드한 뒤 `fonts/` 의 글꼴이 바뀐 경우예요. 그때는 `./build.sh` 를 다시 돌리세요.
+RIDIBatang 글자를 하나라도 TrueType 외곽선으로 옮기지 못하면 그 굵기의 빌드가 실패해서 기록이 남지 않아요.
+
+이 과정은 `release.sh` 가 한 번에 해요. `README.md` 와 `build.sh` 의 예시 버전을 올려 커밋하고 `main` 에 올린 뒤
+돌리면, 열여섯 종을 빌드해 회귀 검사와 `package.sh` 를 거친 다음 `vX.Y.Z` 태그를 올리고 `dist/` 의 파일을 붙인 초안
+릴리스를 만들어요. 릴리스 노트를 쓰고 공개하면 끝이에요. 8코어 16스레드에서 12분쯤 걸려요.
+
+```sh
+VERSION=X.Y.Z ./release.sh
+VERSION=X.Y.Z uv run --no-project --with-requirements requirements.txt ./release.sh   # uv 로 돌릴 때
+```
+
+`build.sh`·`package.sh` 가 경고만 하는 것도 `release.sh` 는 막아요. 깔린 라이브러리 판이 `requirements.txt` 와
+다르거나, 커밋하지 않은 고침이나 새 파일이 있거나, 릴리스할 커밋이 `origin/main` 에 없거나, 같은 태그가 다른 커밋에
+있거나, 같은 판의 릴리스가 초안까지 포함해 이미 있으면 빌드하기 전에 멈춰요. 기본값과 다른 빌드 값으로 만들었으면
+검사하기 전에 멈춰요. 태그는 검사를 다 통과한 뒤에만 올리니, 중간에 실패하면 고친 커밋으로 다시 돌리면 돼요.
+
+PR 과 `main` 푸시에서는 `.github/workflows/ci.yml` 이 셸 스크립트 문법과, 빌드한 글꼴 없이 도는 검사만 돌려요.
+
+## LICENSE
+
+[SIL Open Font License 1.1](LICENSE). 라틴 글자를 가져온 JetBrains Mono 와 한글을 가져온 RIDIBatang 이 이 라이선스예요.
+`sources/RIDIBatang.otf` 는 빌드에 쓰려고 RIDIBatang 원본을 고치지 않고 넣어 둔 파일로, 같은 라이선스를 따라요.
+
+아이콘은 Nerd Fonts 가 여러 아이콘 묶음에서 가져와 글꼴 크기에 맞춘 것을 베이스 글꼴에서 가져왔어요. 그래서 아이콘은
+묶음마다 원래 라이선스를 따라요. Codicons·Font Awesome 은 출처를 밝혀야 하는 CC BY 4.0, MaterialDesign 은
+Apache 2.0 이고, 나머지는 MIT·OFL 1.1·Unlicense 예요. 묶음마다의 판·라이선스·출처는 [LICENSE](LICENSE) 에 적어 두었고,
+`LICENSE` 는 릴리스 ZIP 에도 들어가요.
+
+- **JetBrains Mono** — Copyright 2020 The JetBrains Mono Project Authors
+- **Nerd Fonts** — Ryan L McIntyre and contributors
+- **RIDIBatang** — Copyright (c) 2019 RIDI & Sandoll, 산돌 디자인

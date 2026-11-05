@@ -1,0 +1,4 @@
+Official source: https://github.com/gerald-kim/yeobaek
+Unmodified original font files. See notices for full terms.
+상업 이용·웹 임베딩·원본 재배포 허용. 파일 단독 판매 금지, 저작권·OFL 전문 보존. 원본 무변환 사용.
+상업 이용·임베딩·수정·재배포 가능, 폰트 단독 판매 금지. 재배포 시 저작권과 OFL 전문을 유지하고 수정본은 명시된 예약 이름(RFN)을 사용하지 않아야 합니다. 포함 아이콘은 MIT·CC BY·Apache 등 구성요소별 고지도 확인하세요. LETSUM 미리보기는 공식 원본을 변환 없이 제공합니다.

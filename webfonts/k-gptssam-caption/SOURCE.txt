@@ -1,0 +1,4 @@
+Official source: https://github.com/gptssam/gptssam-caption
+Unmodified original font files. See notices for full terms.
+Gmarket 기반 이용조건. 상업 이용·임베딩·원본 재배포 가능, 파일 판매 금지, 원천 고지 보존, 제작물 홍보 활용·거부 요청 조항 표시.
+Gmarket Sans 기반 배포 라이선스. 상업 이용·임베딩·수정·재배포 허용, 폰트 단독 판매 금지. 저작권·라이선스 전문 및 예약 이름 조건 유지. 제6항에 따라 사용 제작물 이미지는 권리자 홍보에 활용될 수 있으며 구체적인 제외 요청 가능.

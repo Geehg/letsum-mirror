@@ -1,0 +1,4 @@
+Official source: https://ctan.org/pkg/baekmuk
+Unmodified original font files. See notices for full terms.
+Kim Jeong-Hwan 사용자 정의 허용 라이선스. 사용·복사·수정·배포 가능. 저작권·허가문·4개 상표 고지 보존. OFL로 표기하지 않음.
+사용·복제·수정·재배포 허용. 모든 원본·수정본에 Kim Jeong-Hwan 저작권 및 허가문을 포함하고, 동봉 문서에 Baekmuk Batang·Dotum·Gulim·Headline이 Kim Jeong-Hwan의 등록상표라는 문구를 유지해야 합니다. OFL이 아닌 별도 이용조건입니다.
