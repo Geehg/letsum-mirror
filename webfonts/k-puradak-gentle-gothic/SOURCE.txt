@@ -1,0 +1,3 @@
+Official source: https://puradakchicken.com/company/font.asp (TTF download: /_proc/fontDwn.asp?regDiv=0, "Puradak Gentle Gothic.ttf")
+Unmodified original font file (400.ttf = official TTF, byte-identical). See LICENSE.txt for the full terms.
+무료 사용·수정 가능, 폰트 파일 유료 판매 금지. 라이선스 전문을 표시하면 번들·재배포 허용. 예약 글꼴 이름(Puradak Gentle Gothic)이 있어 변환하지 않고 원본 그대로 둔다.
