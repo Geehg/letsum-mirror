@@ -1,0 +1,13 @@
+어비폰트 무료 배포 라이선스
+공식 출처: https://uhb.kr/uhbeefont/#license
+확인: 2026-11-18
+
+개인 사용: 일기, 손편지, 블로그까지 자유롭게 사용하세요.
+상업 이용: 인쇄물, 광고, 브랜드, 이모티콘, 굿즈, 영상 자막까지 모두 가능합니다.
+변형·임베드: 로고, BI, 웹폰트 임베드, 변형 후 재배포까지 허용합니다.
+금지: 폰트 파일 자체를 유료로 판매하거나 조건부 교환하는 행위는 금지합니다.
+
+원본 TTF를 변경 없이 보존합니다.
+
+Copyright © UhBee FONT 2018. All Rights Reserved.
+원본 출처: https://uhb.kr/uhbeefont/files/UhBeeMINANIENG.ttf
